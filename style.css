@@ -1,0 +1,131 @@
+
+.carousel{
+  margin: auto;
+  padding: 20px 0;
+  max-width: 10000px;
+  overflow:hidden;
+  display: flex;
+  flex: 0 0 100%;
+  &:hover .group {
+      animation-play-state: paused;
+    }
+}
+
+.card{
+  width: 400px;
+  color:white;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 10%) 5px 5px 20px 0;
+  padding: 10px;
+  font-size: xx-large;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  background-color: aliceblue;
+  border-radius: 30%;
+}
+@keyframes scrolling {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+.group {
+    display: flex;
+    gap: 20px;
+    /* Добавляем отступ справа, чтобы создать зазор между последней и первой картой. */
+    padding-right: 20px;
+    will-change: transform; /* Мы должны быть добры к браузеру - пусть он знает, что мы будем анимировать. */
+    animation: scrolling 40s linear infinite;
+  }
+body {
+  background-color: rgb(238, 250, 215);
+}
+table.buttons{
+  border: 0px;
+  width: 100vw;
+}
+.topnav {
+    overflow:hidden;
+}
+.topnav a {
+    float:left;
+    background-color: greenyellow;
+    border-radius: 35px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    min-width: 100px;
+    padding: 20px 24px;
+    text-decoration: none;
+    font-size: 17px;
+    &:hover{
+      background-color: aliceblue;
+    }
+}
+button.reg {
+  display: block;
+  height: 50px;
+  width: 200px;
+  margin: auto;
+}
+table.buttons button {
+  height: 50px;
+  width: 340px;
+  border: 0px;
+}
+div.title p1{
+  font-size: 36px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  justify-content: center;
+  border-radius: 99%;
+  background-color: greenyellow;
+}
+div.title p2{
+  font-size: 36px;
+  font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+}
+.pred{
+  background-color: rgb(255, 47, 92);
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 10px;
+}
+
+.pred_button
+{
+  font-size: 30px;
+  display: flex;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 20px;
+
+  &:hover{
+    background-color: rgb(145, 255, 0);
+  }
+}
+
+div.title p2{
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  display: block;
+  display: flex;
+  justify-content: center;
+
+}
+table.text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:auto;
+  width: 1000px;
+  height: 300px;
+}
