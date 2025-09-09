@@ -1,0 +1,40 @@
+.topnav {
+    overflow:hidden;
+    padding-bottom: 40px;
+}
+.topnav a {
+    float:left;
+    background-color: greenyellow;
+    border-radius: 35px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    min-width: 100px;
+    padding: 20px 24px;
+    text-decoration: none;
+    font-size: 17px;
+    &:hover{
+      background-color: aliceblue;
+    }
+}
+
+.bodys{
+    background-color: rgba(240, 248, 255, 0.486);
+}
+table.titles{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:auto;
+  width: 1000px;
+  height: 300px;
+}
+.titles{
+    font-size: 36px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+}

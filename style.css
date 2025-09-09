@@ -52,7 +52,7 @@ table.buttons{
 }
 .topnav a {
     float:left;
-    background-color: greenyellow;
+    background-color: rgba(255, 255, 255, 0.459);
     border-radius: 35px;
     color: rgb(0, 0, 0);
     text-align: center;
@@ -75,15 +75,18 @@ table.buttons button {
   width: 340px;
   border: 0px;
 }
+
 div.title p1{
-  font-size: 36px;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  font-size: 60px;
+  padding-bottom: 60px;
+  padding-top: 60px;
   font-family: 'Times New Roman', Times, serif;
   display: flex;
   justify-content: center;
   border-radius: 99%;
-  background-color: greenyellow;
+  font-style: oblique;
+  color:rgb(255, 255, 255);
+  
 }
 div.title p2{
   font-size: 36px;
@@ -91,6 +94,7 @@ div.title p2{
   display: flex;
   justify-content: center;
   color: aliceblue;
+  font-style: oblique;
 }
 .pred{
   background-color: rgb(255, 47, 92);
@@ -107,7 +111,7 @@ div.title p2{
   display: flex;
   font-family: 'Times New Roman', Times, serif;
   border-radius: 20px;
-
+  font-style: oblique;
   &:hover{
     background-color: rgb(145, 255, 0);
   }
@@ -121,7 +125,7 @@ div.title p2{
   justify-content: center;
 
 }
-table.text{
+.text{
   display: flex;
   align-items: center;
   justify-content: center;
