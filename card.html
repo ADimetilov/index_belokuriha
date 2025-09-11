@@ -21,10 +21,10 @@
         <p>Мы предлагаем вам создать свой маршрут, по которому вы можете отправиться в путешествие</p>
 
         <label>В какое время года вы собираетесь посетить город?</label>
-        <input type="text" placeholder="Например: лето">
+        <input type="text" id = "time" placeholder="Например: лето">
 
         <label>Чем бы вы хотели заняться в городе?</label>
-        <input type="text" placeholder="Например: прогулки">
+        <input id="predp" type="text" placeholder="Например: прогулки">
 
         <button>Составить маршрут</button>
     </div>
@@ -42,6 +42,58 @@
             zoom: 13,
             key,
         });
+const DGIS_KEY = '';
+const YC_API_KEY = '';
+const YC_MODEL_URI = '';
+
+const directions = new mapgl.Directions(map, {});
+
+// Функция запроса к YandexGPT
+async function callYandexGPT(time, predp) {
+    try {
+        const resp = await fetch("http://localhost:3000/generate-route", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ time, predp })
+        });
+        return await resp.json();
+    } catch(e) {
+        console.error("Ошибка при обращении к серверу", e);
+        return [];
+    }
+}
+
+// Обработка кнопки
+document.querySelector("button").addEventListener("click", async () => {
+    const time = document.getElementById("time").value.trim();
+    const predp = document.getElementById("predp").value.trim();
+
+    const status = document.getElementById("status") || document.createElement("p");
+    if (!status.parentNode) document.body.appendChild(status);
+    status.textContent = "Генерируем маршрут...";
+    directions.clear();
+
+    try {
+        const route = await callYandexGPT(time, predp);
+        if (!route.length) throw new Error("Модель не вернула точки маршрута");
+
+        // Добавляем маркеры с popup
+        route.forEach(p => {
+            new mapgl.Marker(map, { coordinates: [p.x, p.y], draggable: false })
+                .bindPopup(`<b>${p.name}</b><br>${p.description}`);
+        });
+
+        // Собираем координаты для маршрута
+        const points = route.map(p => [p.x, p.y]);
+        directions.pedestrianRoute({ points });
+
+        status.textContent = "Маршрут построен!";
+    } catch(err) {
+        console.error(err);
+        status.textContent = "Ошибка: " + err.message;
+    }
+});
+</script>
     </script>
         
     </body>
