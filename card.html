@@ -1,22 +1,48 @@
 <html>
     <head>
-        <title>О нас</title>
+        <title>Твой маршрут!</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style_card.css">
+        <script src="https://maps.api.2gis.ru/2.0/loader.js"></script>
     </head>
     <body background="Frame 38.png" style="background-size: cover;">
+      <div id="container"></div>
+        <script src="https://mapgl.2gis.com/api/js/v1"></script>
+        <script src="https://unpkg.com/@2gis/mapgl-directions@^2/dist/directions.js"></script>
         <div class = "topnav">
             <table>
                 <tr><td><a href="index.html">Главная</a></td>
                 <td><a href = "info.html"> О нас</a></td></tr>
             </table>
         </div>
-        <div class="bodys">
-            <table class="titles">
-            <tr><td><p1 class="titles">Мы предлагаем вам создать свой маршрут, по которому вы можете отправиться в путешествие</p1></td></tr>
-        </table>
-        </div>
-        
+       <div class="container">
+    <div class="form-block">
+        <h2>Создайте свой маршрут</h2>
+        <p>Мы предлагаем вам создать свой маршрут, по которому вы можете отправиться в путешествие</p>
+
+        <label>В какое время года вы собираетесь посетить город?</label>
+        <input type="text" placeholder="Например: лето">
+
+        <label>Чем бы вы хотели заняться в городе?</label>
+        <input type="text" placeholder="Например: прогулки">
+
+        <button>Составить маршрут</button>
+    </div>
+
+    <div class="map-block">
+        <div id="map"></div>
+    </div>
+</div>
+        <script>
+        const key = '4ac28761-61cb-4204-b17d-ee5f765b61e6';
+        const directionsKey = '4ac28761-61cb-4204-b17d-ee5f765b61e6';
+
+        const map = new mapgl.Map('map', {
+            center: [84.981255,51.995273],
+            zoom: 13,
+            key,
+        });
+    </script>
         
     </body>
 </html>

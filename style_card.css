@@ -1,10 +1,9 @@
 .topnav {
     overflow:hidden;
-    padding-bottom: 40px;
 }
 .topnav a {
     float:left;
-    background-color: greenyellow;
+    background-color: rgba(255, 255, 255, 0.459);
     border-radius: 35px;
     color: rgb(0, 0, 0);
     text-align: center;
@@ -17,24 +16,92 @@
     }
 }
 
-.bodys{
-    background-color: rgba(240, 248, 255, 0.486);
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 90%;
 }
-table.titles{
+.container {
     display: flex;
-  align-items: center;
-  justify-content: center;
-  margin:auto;
-  width: 1000px;
-  height: 300px;
+    justify-content: space-between; /* разделяет форму и карту */
+    align-items: flex-start;
+    height: 90%;
+    padding: 40px;
+    padding-bottom: 100px;
+    gap: 40px; /* расстояние между формой и картой */
 }
-.titles{
-    font-size: 36px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    align-items: center;
-    font-family: 'Times New Roman', Times, serif;
-    display: flex;
-    justify-content: center;
-    width: 1000px;
+
+.form-block {
+    background: rgb(255, 255, 255);
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 350px;
+}
+
+.form-block h2 {
+    margin-top: 0;
+    font-size: 25px;
+    color: #333;
+}
+
+.form-block p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.form-block label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-block input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.form-block input[type="text"]:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+.form-block button {
+    width: 100%;
+    padding: 12px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.form-block button:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+.map-block {
+    flex: 1; /* карта растягивается на всё оставшееся место */
+    padding-bottom: 200px;
+    border-radius: 30%;
+}
+
+#map {
+    width: 100%;
+    height: calc(100% - 20px);
+    margin-bottom: 20px;
+    border-radius: 30%;
+
 }
